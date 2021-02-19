@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Foodie Me</string>
+    <string name="app_name">Foodie</string>
+    <string name="slogan">"Yummy ~ Satisfaction…"</string>
 </resources>
