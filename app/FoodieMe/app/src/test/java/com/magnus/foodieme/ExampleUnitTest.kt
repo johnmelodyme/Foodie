@@ -1,4 +1,4 @@
-package com.magnus.foodieme
+package com.johnmelodyme.foodie
 
 import org.junit.Test
 

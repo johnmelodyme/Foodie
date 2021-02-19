@@ -1,8 +1,8 @@
-package com.magnus.foodieme.UI
+package com.johnmelodyme.foodie.UI
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.magnus.foodieme.R
+import com.johnmelodyme.foodie.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

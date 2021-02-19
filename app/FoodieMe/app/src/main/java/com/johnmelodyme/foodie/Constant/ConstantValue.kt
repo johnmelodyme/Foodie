@@ -1,4 +1,4 @@
-package com.magnus.foodieme.Constant
+package com.johnmelodyme.foodie.Constant
 
 class ConstantValue
 {
