@@ -1,0 +1,22 @@
+{
+  "data" : [
+    {
+      "id" : 1,
+      "email" : "steven@gmail.com",
+      "first_name" : "Steven",
+      "last_name" : "Smith"
+    },
+    {
+      "id" : 2,
+      "email" : "matt.henry@gmail.com",
+      "first_name" : "Matt",
+      "last_name" : "Henry"
+    },
+    {
+      "id" : 3,
+      "email" : "david@gmail.com",
+      "first_name" : "David",
+      "last_name" : "Miller"
+    }
+  ]
+}

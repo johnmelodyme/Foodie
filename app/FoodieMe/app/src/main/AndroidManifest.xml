@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodieMe">
-        <activity android:name=".UI.QRActivity"></activity>
+        <activity android:name=".UI.Intro.IntroActivity"></activity>
+        <activity android:name=".UI.ProfileActivity" />
+        <activity android:name=".UI.QRActivity" />
         <activity android:name=".UI.SearchActivity" />
         <activity android:name=".UI.MainActivity" />
         <activity

@@ -22,7 +22,7 @@
         android:id="@+id/qr"
         android:enabled="true"
         android:icon="@drawable/ic_qr_code"
-        android:title="@string/bottom_navigation_search"
+        android:title="@string/bottom_navigation_qr"
         app:showAsAction="ifRoom|withText"
         tools:targetApi="o" />
 
@@ -30,7 +30,7 @@
         android:id="@+id/profile"
         android:enabled="true"
         android:icon="@drawable/ic_profile"
-        android:title="@string/bottom_navigation_search"
+        android:title="@string/bottom_navigation_profile"
         app:showAsAction="ifRoom|withText"
         tools:targetApi="o" />
 

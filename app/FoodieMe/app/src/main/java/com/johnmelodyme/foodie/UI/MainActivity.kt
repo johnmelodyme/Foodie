@@ -18,7 +18,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.johnmelodyme.foodie.Constant.ConstantValue
 import com.johnmelodyme.foodie.R
 
 class MainActivity : AppCompatActivity() {
@@ -53,7 +52,8 @@ class MainActivity : AppCompatActivity() {
 
     // * Bom Navigation Bar
     private val onNavigationItemSelectedListener =
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        BottomNavigationView.OnNavigationItemSelectedListener { item
+            ->
             when (item.itemId) {
                 R.id.home -> {
                     return@OnNavigationItemSelectedListener true
@@ -66,6 +66,19 @@ class MainActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
 
+                R.id.qr -> {
+                    val qr = Intent(this, QRActivity::class.java)
+                    startActivity(qr)
+                    this.finish()
+                    return@OnNavigationItemSelectedListener true
+                }
+
+                R.id.profile -> {
+                    val profile = Intent(this, ProfileActivity::class.java)
+                    startActivity(profile)
+                    this.finish()
+                    return@OnNavigationItemSelectedListener true
+                }
             }
             false
         }

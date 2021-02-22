@@ -20,6 +20,11 @@ class SplashActivity : AppCompatActivity()
         Methods.handlingSplash(savedInstanceState, this)
     }
 
+    override fun finish() {
+        super.finish()
+        overridePendingTransition(0, R.anim.fade_out)
+    }
+
     @Suppress("DEPRECATION")
     fun onFullScreen(bundle: Bundle?)
     {

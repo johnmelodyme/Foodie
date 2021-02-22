@@ -67,6 +67,19 @@ class SearchActivity : AppCompatActivity()
                     return@OnNavigationItemSelectedListener true
                 }
 
+                R.id.qr -> {
+                    val qr = Intent(this, QRActivity::class.java)
+                    startActivity(qr)
+                    this.finish()
+                    return@OnNavigationItemSelectedListener true
+                }
+
+                R.id.profile -> {
+                    val profile = Intent(this, ProfileActivity::class.java)
+                    startActivity(profile)
+                    this.finish()
+                    return@OnNavigationItemSelectedListener true
+                }
             }
             false
         }
