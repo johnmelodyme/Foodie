@@ -4,23 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.MainActivity">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="sdfg"
-        tools:ignore="HardcodedText" />
-
+    tools:context=".UI.SearchActivity">
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomnavigationhome"
+        android:id="@+id/bottomnavigationsearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_items"
-        android:background="?android:attr/windowBackground"
         android:layout_alignParentBottom="true"
-        />
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav_items" />
 
 </RelativeLayout>

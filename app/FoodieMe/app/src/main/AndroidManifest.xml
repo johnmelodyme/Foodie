@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.johnmelodyme.foodie">
+    package="com.johnmelodyme.foodie"
+    android:installLocation="preferExternal">
 
     <application
         android:allowBackup="true"
@@ -9,8 +10,11 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodieMe">
+        <activity android:name=".UI.QRActivity"></activity>
+        <activity android:name=".UI.SearchActivity" />
         <activity android:name=".UI.MainActivity" />
-        <activity android:name=".UI.SplashActivity"
+        <activity
+            android:name=".UI.SplashActivity"
             android:theme="@style/Theme.FoodieMe.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
