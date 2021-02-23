@@ -34,6 +34,5 @@ class Methods
                 context.startActivity(Intent(context, MainActivity::class.java))
             }, ConstantValue.MathematicalValue[0].toLong())
         }
-
     }
 }

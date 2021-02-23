@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.FoodieMe.Splash"
+    tools:context=".UI.Authentication.RegistrationActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="221dp"
+        android:layout_height="221dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:layout_marginBottom="13dp"
+        android:background="@mipmap/splash"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="4dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/user_email_reg"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="43dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/hint_auth_reg"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:paddingStart="30dp"
+            tools:ignore="RtlSymmetry" />
+
+        <EditText
+            android:id="@+id/user_password_reg"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="43dp"
+            android:background="@drawable/edit_text_background"
+            android:hint="@string/hint_auth_reg_1"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:paddingStart="30dp"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="43dp"
+            android:background="@drawable/edit_text_background"
+            android:text="@string/btn_register"
+            android:textColor="@android:color/white"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

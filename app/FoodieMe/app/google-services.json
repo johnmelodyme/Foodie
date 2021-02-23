@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "567572093320",
+    "project_id": "androidapplication-71c2a",
+    "storage_bucket": "androidapplication-71c2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567572093320:android:57780d9e293469db1c023d",
+        "android_client_info": {
+          "package_name": "com.johnmelodyme.bluetooth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567572093320-a02vdbpmuasfsv6e44itdl1eff176qud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUsEGAjbA9wtXChsV7md7LWbGV5-mLEq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567572093320-a02vdbpmuasfsv6e44itdl1eff176qud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:567572093320:android:5782d017de62694d1c023d",
+        "android_client_info": {
+          "package_name": "com.johnmelodyme.foodie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "567572093320-a02vdbpmuasfsv6e44itdl1eff176qud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUsEGAjbA9wtXChsV7md7LWbGV5-mLEq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "567572093320-a02vdbpmuasfsv6e44itdl1eff176qud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

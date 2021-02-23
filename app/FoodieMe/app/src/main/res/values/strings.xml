@@ -5,6 +5,11 @@
     <string name="bottom_navigation_search">Search</string>
     <string name="bottom_navigation_qr">Scan</string>
     <string name="bottom_navigation_profile">profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="slogan_1">Cooking is a therapy</string>
+    <string name="slogan_2">Cooking is for the soul</string>
+    <string name="slogan_3">Explore the foodie in you</string>
+    <string name="hint_auth_reg">Enter Email</string>
+    <string name="hint_auth_reg_1">Enter Password</string>
+    <string name="btn_register">Sign Up</string>
 </resources>
