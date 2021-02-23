@@ -12,4 +12,5 @@
     <string name="hint_auth_reg">Enter Email</string>
     <string name="hint_auth_reg_1">Enter Password</string>
     <string name="btn_register">Sign Up</string>
+    <string name="existing_user">Already have an account? Login Now</string>
 </resources>
