@@ -61,9 +61,21 @@
             android:layout_marginEnd="43dp"
             android:background="@drawable/edit_text_background"
             android:onClick="onClickLogin"
-            android:text="@string/btn_register"
+            android:text="@string/btn_login"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/reset_user"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="23dp"
+            android:onClick="onClickLogin"
+            android:paddingTop="5dp"
+            android:text="@string/forgot_password"
+            android:textAlignment="center"
+            android:textColor="@color/pink"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </RelativeLayout>

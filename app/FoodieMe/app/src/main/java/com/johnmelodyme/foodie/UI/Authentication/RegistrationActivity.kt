@@ -23,7 +23,6 @@ class RegistrationActivity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
-
     }
 
     fun onClickRegister(view: View)
@@ -37,23 +36,14 @@ class RegistrationActivity : AppCompatActivity()
             {
                 when
                 {
-
                     TextUtils.isEmpty(userEmail.text.toString().trim { it <= ' ' }) ->
                     {
-                        Toast.makeText(
-                            this@RegistrationActivity,
-                            "Please Enter Your Email ?",
-                            Toast.LENGTH_LONG
-                        ).show()
+                        userEmail.error = "Please Enter Your Email ?"
                     }
 
                     TextUtils.isEmpty(userPassword.text.toString().trim { it <= ' ' }) ->
                     {
-                        Toast.makeText(
-                            this@RegistrationActivity,
-                            "Please Enter Your Password ?",
-                            Toast.LENGTH_LONG
-                        ).show()
+                        userPassword.error = "Please Enter Your Password ?"
                     }
 
                     else ->
@@ -77,7 +67,10 @@ class RegistrationActivity : AppCompatActivity()
                                             Toast.LENGTH_SHORT
                                         ).show()
 
-                                        Log.i(TAG, "Register user" + firebaseUser.uid + "Successful")
+                                        Log.i(
+                                            TAG,
+                                            "Register user" + firebaseUser.uid + "Successful"
+                                        )
 
                                         // * Navigate To MainActivity
                                         val intent = Intent(this, MainActivity::class.java)
@@ -106,8 +99,8 @@ class RegistrationActivity : AppCompatActivity()
 
             R.id.exisitinguser ->
             {
-                val home = Intent(this, MainActivity::class.java)
-                startActivity(home)
+                val Login = Intent(this, LoginActivity::class.java)
+                startActivity(Login)
                 this.finish()
             }
         }

@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodieMe">
-        <activity android:name=".UI.Authentication.Reset.ResetActivity"></activity>
-        <activity android:name=".UI.Authentication.LoginActivity" />
+        <activity
+            android:name=".UI.Authentication.LoginActivity"
+            android:theme="@style/Theme.FoodieMe.Splash" />
         <activity
             android:name=".UI.Authentication.RegistrationActivity"
             android:theme="@style/Theme.FoodieMe.Splash" />

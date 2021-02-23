@@ -13,4 +13,6 @@
     <string name="hint_auth_reg_1">Enter Password</string>
     <string name="btn_register">Sign Up</string>
     <string name="existing_user">Already have an account? Login Now</string>
+    <string name="forgot_password">Forgot Password? Reset Password Here.</string>
+    <string name="btn_login">Sign In</string>
 </resources>
