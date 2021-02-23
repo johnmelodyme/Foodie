@@ -36,7 +36,7 @@ class RegistrationActivity : AppCompatActivity()
             {
                 when
                 {
-                    TextUtils.isEmpty(userEmail.text.toString().trim { it <= ' ' }) ->
+                    TextUtils.isEmpty(userEmail.text.toString().trim { it <= ' ' })    ->
                     {
                         userEmail.error = "Please Enter Your Email ?"
                     }
@@ -46,7 +46,7 @@ class RegistrationActivity : AppCompatActivity()
                         userPassword.error = "Please Enter Your Password ?"
                     }
 
-                    else ->
+                    else                                                               ->
                     {
                         val email: String = userEmail.text.toString().trim() { it <= ' ' }
                         val password: String = userPassword.text.toString().trim() { it <= ' ' }
@@ -91,7 +91,6 @@ class RegistrationActivity : AppCompatActivity()
                             }
                     }
                 }
-
             }
 
             R.id.exisitinguser ->

@@ -120,7 +120,7 @@ class LoginActivity : AppCompatActivity()
 
         val alert = dialogBuilder.create()
 
-        alert.setTitle(resources.getString(R.string.app_name) + "\tReset Password?")
+        alert.setTitle(resources.getString(R.string.app_name) + "\t Reset Password?")
 
         alert.show()
 

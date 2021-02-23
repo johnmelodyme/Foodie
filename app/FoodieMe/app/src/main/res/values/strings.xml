@@ -16,4 +16,7 @@
     <string name="forgot_password">Forgot Password? Reset Password Here.</string>
     <string name="btn_login">Sign In</string>
     <string name="signout">Sign Out</string>
+    <string name="newpost">What  recipe for today?</string>
+    <string name="post_it">Post It !</string>
+    <string name="add_image_desp">Add Image</string>
 </resources>

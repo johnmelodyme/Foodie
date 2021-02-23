@@ -3,6 +3,7 @@ package com.johnmelodyme.foodie.UI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.johnmelodyme.foodie.R
 
@@ -44,8 +45,19 @@ class PostActivity : AppCompatActivity()
 
         val alert = dialogBuilder.create()
 
-        alert.setTitle(resources.getString(R.string.app_name) + "\tBack to Home")
+        alert.setTitle(resources.getString(R.string.app_name) + "\t Back to Home")
 
         alert.show()
+    }
+
+    fun onClickPostIt(view: View)
+    {
+        when (view.id)
+        {
+            R.id.post_status ->
+            {
+
+            }
+        }
     }
 }
