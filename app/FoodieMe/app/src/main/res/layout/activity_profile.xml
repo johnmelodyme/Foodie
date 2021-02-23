@@ -4,17 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.MainActivity">
+    tools:context=".UI.ProfileActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_white"
+        android:paddingStart="23dp"
+        app:logo="@mipmap/splash"
+        app:title="@string/app_name"
+        app:titleMarginStart="100dp"
+        app:titleTextColor="@color/pink"
+        tools:ignore="RtlSymmetry" />
 
+    <Button
+        android:id="@+id/sign_out"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@+id/bottomnavigationprofilee"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="23dp"
+        android:onClick="onClickProfile"
+        android:text="@string/signout"
+        android:textColor="@android:color/white" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigationprofilee"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_items"
-        android:background="?android:attr/windowBackground"
         android:layout_alignParentBottom="true"
-        />
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/bottom_nav_items" />
 
 </RelativeLayout>

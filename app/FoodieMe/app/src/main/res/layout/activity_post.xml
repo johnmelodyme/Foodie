@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.MainActivity">
+    tools:context=".UI.PostActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -16,15 +16,5 @@
         app:titleMarginStart="100dp"
         app:titleTextColor="@color/pink"
         tools:ignore="RtlSymmetry" />
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomnavigationqr"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/bottom_nav_items"
-        android:background="?android:attr/windowBackground"
-        android:layout_alignParentBottom="true"
-        />
 
 </RelativeLayout>

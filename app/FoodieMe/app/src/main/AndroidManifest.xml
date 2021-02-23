@@ -13,16 +13,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodieMe">
         <activity
+            android:name=".UI.PostActivity"
+            android:theme="@style/Theme.FoodieMe.Splash" />
+        <activity
             android:name=".UI.Authentication.LoginActivity"
             android:theme="@style/Theme.FoodieMe.Splash" />
         <activity
             android:name=".UI.Authentication.RegistrationActivity"
             android:theme="@style/Theme.FoodieMe.Splash" />
-        <activity android:name=".UI.Intro.IntroActivity" />
-        <activity android:name=".UI.ProfileActivity" />
-        <activity android:name=".UI.QRActivity" />
-        <activity android:name=".UI.SearchActivity" />
-        <activity android:name=".UI.MainActivity" />
+        <activity
+            android:name=".UI.Intro.IntroActivity"
+            android:theme="@style/Theme.FoodieMe.Splash" />
+        <activity
+            android:name=".UI.ProfileActivity"
+            android:theme="@style/Theme.FoodieMe.Splash" />
+        <activity
+            android:name=".UI.QRActivity"
+            android:theme="@style/Theme.FoodieMe.Splash" />
+        <activity
+            android:name=".UI.SearchActivity"
+            android:theme="@style/Theme.FoodieMe.Splash" />
+        <activity
+            android:name=".UI.MainActivity"
+            android:theme="@style/Theme.FoodieMe.Splash" />
         <activity
             android:name=".UI.SplashActivity"
             android:theme="@style/Theme.FoodieMe.Splash">

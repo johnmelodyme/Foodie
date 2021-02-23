@@ -52,46 +52,43 @@ class RegistrationActivity : AppCompatActivity()
                         val password: String = userPassword.text.toString().trim() { it <= ' ' }
 
                         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(
-                                OnCompleteListener
-                                { task ->
+                            .addOnCompleteListener { task ->
 
-                                    // * If User Registration Is Successful
-                                    if (task.isSuccessful)
-                                    {
-                                        val firebaseUser: FirebaseUser = task.result!!.user!!
+                                // * If User Registration Is Successful
+                                if (task.isSuccessful)
+                                {
+                                    val firebaseUser: FirebaseUser = task.result!!.user!!
 
-                                        Toast.makeText(
-                                            this@RegistrationActivity,
-                                            "Registration Successful",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
+                                    Toast.makeText(
+                                        this@RegistrationActivity,
+                                        "Registration Successful",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
 
-                                        Log.i(
-                                            TAG,
-                                            "Register user" + firebaseUser.uid + "Successful"
-                                        )
+                                    Log.i(
+                                        TAG,
+                                        "Register user" + firebaseUser.uid + "Successful"
+                                    )
 
-                                        // * Navigate To MainActivity
-                                        val intent = Intent(this, MainActivity::class.java)
-                                        intent.flags =
-                                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                        intent.putExtra("user_id", firebaseUser.uid)
-                                        intent.putExtra("email_id", email)
-                                        startActivity(intent)
-                                        this.finish()
-                                    }
-                                    else
-                                    {
-                                        Log.e(TAG, "onClickRegister: ")
-                                        Toast.makeText(
-                                            this@RegistrationActivity,
-                                            "Registration Failed",
-                                            Toast.LENGTH_LONG
-                                        ).show()
-                                    }
+                                    // * Navigate To MainActivity
+                                    val intent = Intent(this, MainActivity::class.java)
+                                    intent.flags =
+                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                    intent.putExtra("user_id", firebaseUser.uid)
+                                    intent.putExtra("email_id", email)
+                                    startActivity(intent)
+                                    this.finish()
                                 }
-                            )
+                                else
+                                {
+                                    Log.e(TAG, "onClickRegister: ")
+                                    Toast.makeText(
+                                        this@RegistrationActivity,
+                                        "Registration Failed",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                            }
                     }
                 }
 

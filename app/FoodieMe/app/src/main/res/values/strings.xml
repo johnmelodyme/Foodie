@@ -4,7 +4,7 @@
     <string name="bottom_navigation_home">Home</string>
     <string name="bottom_navigation_search">Search</string>
     <string name="bottom_navigation_qr">Scan</string>
-    <string name="bottom_navigation_profile">profile</string>
+    <string name="bottom_navigation_profile">Profile</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="slogan_1">Cooking is a therapy</string>
     <string name="slogan_2">Cooking is for the soul</string>
@@ -15,4 +15,5 @@
     <string name="existing_user">Already have an account? Login Now</string>
     <string name="forgot_password">Forgot Password? Reset Password Here.</string>
     <string name="btn_login">Sign In</string>
+    <string name="signout">Sign Out</string>
 </resources>

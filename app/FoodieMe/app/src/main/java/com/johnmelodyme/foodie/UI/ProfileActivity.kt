@@ -3,11 +3,15 @@ package com.johnmelodyme.foodie.UI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.johnmelodyme.foodie.R
 
-class ProfileActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+class ProfileActivity : AppCompatActivity()
+{
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
@@ -29,7 +33,8 @@ class ProfileActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 
-    override fun finish() {
+    override fun finish()
+    {
         super.finish()
         overridePendingTransition(0, R.anim.fade_out)
     }
@@ -55,17 +60,34 @@ class ProfileActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
 
-                R.id.qr -> {
+                R.id.qr ->
+                {
                     val qr = Intent(this, QRActivity::class.java)
                     startActivity(qr)
                     this.finish()
                     return@OnNavigationItemSelectedListener true
                 }
 
-                R.id.profile -> {
+                R.id.profile ->
+                {
                     return@OnNavigationItemSelectedListener true
                 }
             }
             false
         }
+
+    fun onClickProfile(view: View)
+    {
+        when (view.id)
+        {
+            R.id.sign_out ->
+            {
+                // TODO ADD SIGN OUT
+                FirebaseAuth.getInstance().signOut()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                this.finish()
+            }
+        }
+    }
 }
