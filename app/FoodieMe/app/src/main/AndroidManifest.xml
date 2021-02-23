@@ -3,6 +3,8 @@
     package="com.johnmelodyme.foodie"
     android:installLocation="preferExternal">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
@@ -10,7 +12,8 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodieMe">
-        <activity android:name=".UI.Intro.IntroActivity"></activity>
+        <activity android:name=".UI.Authentication.RegistrationActivity" />
+        <activity android:name=".UI.Intro.IntroActivity" />
         <activity android:name=".UI.ProfileActivity" />
         <activity android:name=".UI.QRActivity" />
         <activity android:name=".UI.SearchActivity" />

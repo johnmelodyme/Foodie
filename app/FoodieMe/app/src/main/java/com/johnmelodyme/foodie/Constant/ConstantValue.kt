@@ -4,7 +4,7 @@ class ConstantValue
 {
     companion object
     {
-        val AppName: String = "Foodie"
+        const val AppName: String = "Foodie"
 
         val MathematicalValue : IntArray = intArrayOf(
             2000,
@@ -12,5 +12,7 @@ class ConstantValue
         )
 
         const val TRANSITION_ANIMATION = "TRANSITION_ANIMATION"
+
+        var isUserFirstTime: Boolean = true
     }
 }
