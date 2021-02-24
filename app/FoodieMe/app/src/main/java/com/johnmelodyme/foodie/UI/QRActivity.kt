@@ -1,21 +1,26 @@
 package com.johnmelodyme.foodie.UI
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.johnmelodyme.foodie.R
 
-class QRActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+class QRActivity : AppCompatActivity()
+{
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_q_r)
 
         // * Initialise User Interface
         initUserInterface()
+
+        runScanner(savedInstanceState)
     }
 
-    override fun finish() {
+    override fun finish()
+    {
         super.finish()
         overridePendingTransition(0, R.anim.fade_out)
     }
@@ -55,11 +60,13 @@ class QRActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
 
-                R.id.qr -> {
+                R.id.qr ->
+                {
                     return@OnNavigationItemSelectedListener true
                 }
 
-                R.id.profile -> {
+                R.id.profile ->
+                {
                     val profile = Intent(this, ProfileActivity::class.java)
                     startActivity(profile)
                     this.finish()
@@ -68,4 +75,11 @@ class QRActivity : AppCompatActivity() {
             }
             false
         }
+
+    private fun runScanner(bundle: Bundle?)
+    {
+
+    }
+
+
 }

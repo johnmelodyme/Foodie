@@ -14,10 +14,14 @@ package com.johnmelodyme.foodie.UI
  * <p>
  * https://johnmelodyme.github.io/
  */
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.FirebaseApp
@@ -39,6 +43,10 @@ class MainActivity : AppCompatActivity()
         // * Initialise User Interface
         initUserInterface()
 
+        // * Request For User Permission
+        onRequestForUserPermission(savedInstanceState)
+
+        // * Initialise Firebase
         FirebaseApp.initializeApp(this)
 
         val currentUser = Firebase.auth.currentUser
@@ -123,4 +131,34 @@ class MainActivity : AppCompatActivity()
             false
         }
 
+    private fun onRequestForUserPermission(bundle: Bundle?)
+    {
+        if (ContextCompat.checkSelfPermission(
+                    this@MainActivity,
+                    Manifest.permission.CAMERA
+                ) !=
+                PackageManager.PERMISSION_GRANTED
+
+        )
+        {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                        this@MainActivity,
+                        Manifest.permission.CAMERA
+                    )
+            )
+            {
+                ActivityCompat.requestPermissions(
+                    this@MainActivity,
+                    arrayOf(Manifest.permission.CAMERA), 1
+                )
+            }
+            else
+            {
+                ActivityCompat.requestPermissions(
+                    this@MainActivity,
+                    arrayOf(Manifest.permission.CAMERA), 1
+                )
+            }
+        }
+    }
 }
