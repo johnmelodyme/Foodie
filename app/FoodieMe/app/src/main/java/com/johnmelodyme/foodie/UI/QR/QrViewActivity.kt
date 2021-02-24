@@ -35,14 +35,13 @@ class QrViewActivity : AppCompatActivity()
         finish()
     }
 
-
     override fun finish()
     {
         super.finishActivity(2)
+        overridePendingTransition(0, R.anim.fade_out)
         val home = Intent(this, MainActivity::class.java)
         startActivity(home)
     }
-
 
     private fun initUi(bundle: Bundle?)
     {
