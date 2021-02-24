@@ -20,4 +20,5 @@
     <string name="post_it">Post It !</string>
     <string name="add_image_desp">Add Image</string>
     <string name="acc_id">Account Id</string>
+    <string name="qr_description">Please place the QR code to scan for recipes</string>
 </resources>

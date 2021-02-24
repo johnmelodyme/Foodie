@@ -4,22 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.QRActivity">
+    tools:context=".UI.QR.QRActivity">
 
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true">
 
-    <SurfaceView
-        android:id="@+id/surface_view"
-        android:layout_width="289dp"
-        android:layout_height="294dp"
-        android:layout_above="@+id/bottomnavigationqr"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginBottom="170dp" />
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/qr_view"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:layout_below="@+id/fl"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp" />
+
+    <TextView
+        android:id="@+id/qr_tv"
+        android:layout_width="match_parent"
+        android:layout_height="23dp"
+        android:layout_alignBottom="@id/qr_view"
+        android:paddingTop="3dp"
+        android:text="@string/qr_description"
+        android:textAlignment="center"
+        android:textColor="@color/pink"
+        android:textSize="13sp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigationqr"

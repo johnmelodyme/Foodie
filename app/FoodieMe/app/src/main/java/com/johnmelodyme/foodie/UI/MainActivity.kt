@@ -30,6 +30,7 @@ import com.google.firebase.ktx.Firebase
 import com.johnmelodyme.foodie.Constant.ConstantValue
 import com.johnmelodyme.foodie.R
 import com.johnmelodyme.foodie.UI.Authentication.RegistrationActivity
+import com.johnmelodyme.foodie.UI.QR.QRActivity
 
 class MainActivity : AppCompatActivity()
 {

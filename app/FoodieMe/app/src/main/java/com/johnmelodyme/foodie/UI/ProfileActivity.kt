@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.johnmelodyme.foodie.R
+import com.johnmelodyme.foodie.UI.QR.QRActivity
 
 class ProfileActivity : AppCompatActivity()
 {

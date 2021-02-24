@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.johnmelodyme.foodie.R
+import com.johnmelodyme.foodie.UI.QR.QRActivity
 
 class SearchActivity : AppCompatActivity()
 {

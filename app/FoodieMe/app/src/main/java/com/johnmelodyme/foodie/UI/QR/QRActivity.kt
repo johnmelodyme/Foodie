@@ -1,4 +1,4 @@
-package com.johnmelodyme.foodie.UI
+package com.johnmelodyme.foodie.UI.QR
 
 import android.Manifest
 import android.content.Intent
@@ -9,6 +9,7 @@ import android.util.SparseArray
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.widget.Toast
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -20,6 +21,9 @@ import com.google.android.gms.vision.barcode.BarcodeDetector
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.johnmelodyme.foodie.Constant.ConstantValue
 import com.johnmelodyme.foodie.R
+import com.johnmelodyme.foodie.UI.MainActivity
+import com.johnmelodyme.foodie.UI.ProfileActivity
+import com.johnmelodyme.foodie.UI.SearchActivity
 
 class QRActivity : AppCompatActivity()
 {
@@ -204,7 +208,9 @@ class QRActivity : AppCompatActivity()
 
                 println(""">>>>>> ???????? $value""")
 
-                // cameraSource.stop()
+                parseValue(value)
+
+
             }
             else
             {
@@ -213,5 +219,21 @@ class QRActivity : AppCompatActivity()
 
         }
 
+    }
+
+    private fun parseValue(@NonNull scannedValue: String)
+    {
+        try
+        {
+            val parsingValue = Intent(this, QrViewActivity::class.java)
+            parsingValue.putExtra("value", scannedValue)
+            parsingValue.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+            startActivityForResult(parsingValue, 2)
+            this@QRActivity.finish()
+        }
+        catch (ex: Exception)
+        {
+            throw ex
+        }
     }
 }
