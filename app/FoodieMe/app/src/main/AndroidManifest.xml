@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.johnmelodyme.foodie"
     android:installLocation="preferExternal">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodieMe">
+        android:theme="@style/Theme.FoodieMe"
+        tools:ignore="AllowBackup">
         <activity
             android:name=".UI.PostActivity"
             android:theme="@style/Theme.FoodieMe.Splash" />
@@ -29,7 +32,10 @@
             android:theme="@style/Theme.FoodieMe.Splash" />
         <activity
             android:name=".UI.QRActivity"
-            android:theme="@style/Theme.FoodieMe.Splash" />
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/Theme.FoodieMe.Splash"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".UI.SearchActivity"
             android:theme="@style/Theme.FoodieMe.Splash" />

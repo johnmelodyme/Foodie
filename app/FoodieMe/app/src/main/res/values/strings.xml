@@ -19,4 +19,5 @@
     <string name="newpost">What  recipe for today?</string>
     <string name="post_it">Post It !</string>
     <string name="add_image_desp">Add Image</string>
+    <string name="acc_id">Account Id</string>
 </resources>

@@ -56,7 +56,7 @@ class PostActivity : AppCompatActivity()
         {
             R.id.post_status ->
             {
-
+                 // TODO Post Status
             }
         }
     }

@@ -7,6 +7,7 @@
     tools:context=".UI.ProfileActivity">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profiletoolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_white"
@@ -16,6 +17,35 @@
         app:titleMarginStart="100dp"
         app:titleTextColor="@color/pink"
         tools:ignore="RtlSymmetry" />
+
+
+    <ImageButton
+        android:id="@+id/im_profile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/profiletoolbar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="26dp"
+        android:onClick="onClickProfile"
+        android:background="@drawable/profile_image"
+        android:foreground="@drawable/ic_baseline_person_24"
+        tools:ignore="ContentDescription,UnusedAttribute"
+        tools:targetApi="m" />
+
+    <TextView
+        android:id="@+id/account_id"
+        android:layout_width="216dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/profiletoolbar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="61dp"
+        android:layout_toEndOf="@+id/im_profile"
+        android:text="@string/acc_id"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/sign_out"
