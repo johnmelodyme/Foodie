@@ -1,4 +1,5 @@
 package com.johnmelodyme.foodie.UI
+
 /**
  * Copyright © 2021 by John Melody Me
  * <p>
@@ -45,7 +46,8 @@ class SearchActivity : AppCompatActivity()
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
     }
 
-    override fun finish() {
+    override fun finish()
+    {
         super.finish()
         overridePendingTransition(0, R.anim.fade_out)
     }
@@ -68,14 +70,16 @@ class SearchActivity : AppCompatActivity()
                     return@OnNavigationItemSelectedListener true
                 }
 
-                R.id.qr -> {
+                R.id.qr ->
+                {
                     val qr = Intent(this, QRActivity::class.java)
                     startActivity(qr)
                     this.finish()
                     return@OnNavigationItemSelectedListener true
                 }
 
-                R.id.profile -> {
+                R.id.profile ->
+                {
                     val profile = Intent(this, ProfileActivity::class.java)
                     startActivity(profile)
                     this.finish()
@@ -84,4 +88,9 @@ class SearchActivity : AppCompatActivity()
             }
             false
         }
+
+    private fun showList(bundle: Bundle?)
+    {
+        val categories = arrayOf<String>("Desserts", "Western", "Local", "")
+    }
 }

@@ -7,6 +7,7 @@
     tools:context=".UI.SearchActivity">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tlqr"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_white"
@@ -17,6 +18,20 @@
         app:titleTextColor="@color/pink"
         tools:ignore="RtlSymmetry" />
 
+
+    <ListView
+        android:id="@+id/listviewqr"
+        android:layout_width="347dp"
+        android:layout_height="555dp"
+        android:layout_above="@+id/bottomnavigationsearch"
+        android:layout_below="@+id/tlqr"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        tools:ignore="UnknownIdInLayout" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigationsearch"

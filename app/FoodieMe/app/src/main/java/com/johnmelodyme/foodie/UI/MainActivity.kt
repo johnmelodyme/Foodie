@@ -73,6 +73,8 @@ class MainActivity : AppCompatActivity()
             startActivity(intentToPost)
             this.finish()
         }
+
+
     }
 
     // * User Interface Renderer

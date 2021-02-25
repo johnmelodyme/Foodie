@@ -1,4 +1,15 @@
 package com.johnmelodyme.foodie.UI.CustomAdapter
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.johnmelodyme.foodie.R
+import com.johnmelodyme.foodie.Services.Property
+
 /**
  * Copyright © 2021 by John Melody Me
  * <p>
@@ -13,68 +24,43 @@ package com.johnmelodyme.foodie.UI.CustomAdapter
  * <p>
  * https://johnmelodyme.github.io/
  */
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.BaseAdapter
-import com.bumptech.glide.Glide
-import com.johnmelodyme.foodie.Model.RecipeModelQR
-import com.johnmelodyme.foodie.R
 
-class QrRecipeAdapter(context: Context, arrayListDetails: ArrayList<RecipeModelQR>) : BaseAdapter()
+
+class QrRecipeAdapter(private val data: List<Property>) :
+    RecyclerView.Adapter<QrRecipeAdapter.QRViewHolder>()
 {
-    private val layoutInflater: LayoutInflater
-    private val arrayListDetails: ArrayList<RecipeModelQR>
-
-    init
+    class QRViewHolder(val view: View) : RecyclerView.ViewHolder(view)
     {
-        this.layoutInflater = LayoutInflater.from(context)
-        this.arrayListDetails = arrayListDetails
-    }
-
-    override fun getCount(): Int
-    {
-        return arrayListDetails.size
-    }
-
-    override fun getItem(position: Int): Any
-    {
-        return arrayListDetails.get(position)
-    }
-
-    override fun getItemId(position: Int): Long
-    {
-        return position.toLong()
-    }
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View?
-    {
-
-        val view: View?
-        val listRowHolder: QRRecipeHolder
-
-        if (convertView == null)
+        fun bind(property: Property)
         {
-            view = this.layoutInflater.inflate(R.layout.recipe_qr, parent, false)
-            listRowHolder = QRRecipeHolder(view)
-            view.tag = listRowHolder
-        }
-        else
-        {
-            view = convertView
-            listRowHolder = view.tag as QRRecipeHolder
-        }
+            val imageView = view.findViewById<ImageView>(R.id.image_recipe)
+            val name = view.findViewById<TextView>(R.id.name_of_recipe)
+            val ingredient = view.findViewById<TextView>(R.id.ingredient_recipe)
+            val description = view.findViewById<TextView>(R.id.description_recipe)
+            val data = view.findViewById<TextView>(R.id.recipe_data)
 
-        view?.context?.let {
-            Glide.with(it).load(arrayListDetails.get(position).imageUrl).centerCrop()
-                .into(listRowHolder.image)
-        }
-        listRowHolder.recipeName.text = arrayListDetails.get(position).recipeName
-        listRowHolder.ingredient.text = arrayListDetails.get(position).ingredient
-        listRowHolder.description.text = arrayListDetails.get(position).description
-        listRowHolder.data.text = arrayListDetails.get(position).data
+            Glide.with(view.context).load(property.image).centerCrop().into(imageView)
 
-        return view
+            name.text = property.name
+            ingredient.text = property.ingredient
+            description.text = property.description
+            data.text = property.data
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): QRViewHolder
+    {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.recipe_qr, parent, false)
+        return QRViewHolder(v)
+    }
+
+    override fun onBindViewHolder(holder: QRViewHolder, position: Int)
+    {
+        holder.bind(data[position])
+    }
+
+    override fun getItemCount(): Int
+    {
+        return data.size
     }
 }
