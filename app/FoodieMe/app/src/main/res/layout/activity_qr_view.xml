@@ -6,13 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".UI.QR.QrViewActivity">
 
-    <TextView
-        android:id="@+id/qr_result"
+    <ListView
+        android:id="@+id/listviewrecipe"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="23sp"
-        android:textColor="@color/black"
-        android:layout_centerInParent="true"
-        android:textAlignment="center" />
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

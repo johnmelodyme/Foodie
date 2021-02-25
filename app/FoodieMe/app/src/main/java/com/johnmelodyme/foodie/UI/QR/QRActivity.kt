@@ -1,5 +1,19 @@
 package com.johnmelodyme.foodie.UI.QR
 
+/**
+ * Copyright © 2021 by John Melody Me
+ * <p>
+ * All rights reserved. No part of this software may be reproduced,
+ * distributed, or transmitted in any form or by any means, including
+ * photocopying, recording, or other electronic or mechanical methods,
+ * without the prior written permission of the developer, except in the
+ * case of brief quotations embodied in critical reviews and certain other
+ * noncommercial uses permitted by copyright law. For permission requests,
+ * write to the code-owner, addressed “Attention: Permissions Coordinator,”
+ * at the address below.
+ * <p>
+ * https://johnmelodyme.github.io/
+ */
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -208,8 +222,8 @@ class QRActivity : AppCompatActivity()
 
                 println(""">>>>>> ???????? $value""")
 
-                parseValue(value)
 
+                parseValue(value)
 
             }
             else

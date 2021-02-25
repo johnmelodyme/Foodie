@@ -28,9 +28,11 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.johnmelodyme.foodie.Constant.ConstantValue
+import com.johnmelodyme.foodie.Constant.ConstantValue.Companion.basedUrlRecipe
 import com.johnmelodyme.foodie.R
 import com.johnmelodyme.foodie.UI.Authentication.RegistrationActivity
 import com.johnmelodyme.foodie.UI.QR.QRActivity
+import java.net.URL
 
 class MainActivity : AppCompatActivity()
 {
