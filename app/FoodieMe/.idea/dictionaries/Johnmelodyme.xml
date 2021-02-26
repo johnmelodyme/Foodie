@@ -12,6 +12,7 @@
       <w>newpost</w>
       <w>profiletoolbar</w>
       <w>signout</w>
+      <w>sqlite</w>
       <w>zxing</w>
     </words>
   </dictionary>

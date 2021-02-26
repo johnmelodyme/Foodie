@@ -17,6 +17,12 @@ class ConstantValue
             1001
         )
 
+        val REQUEST_STORAGE: IntArray = intArrayOf(
+            999,
+            111,
+            10
+        )
+
         const val TRANSITION_ANIMATION = "TRANSITION_ANIMATION"
 
         var isUserFirstTime: Boolean = true

@@ -101,7 +101,7 @@ class SearchActivity : AppCompatActivity()
     {
         listView = findViewById(R.id.listviewsearch)
 
-        val categories = arrayOf<String>("Desserts", "Western", "Local")
+        val categories = arrayOf<String>("Desserts", "Western", "Local", "" , "", "", "", "", "", "", "")
         val imageId = arrayOf<Int>(
             R.drawable.abc,
             R.drawable.sandwich,

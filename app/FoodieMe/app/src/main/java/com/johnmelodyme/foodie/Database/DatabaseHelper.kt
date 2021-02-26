@@ -1,4 +1,4 @@
-package com.johnmelodyme.foodie.Database.Helper
+package com.johnmelodyme.foodie.Database
 
 import android.content.Context
 import android.database.Cursor
@@ -8,12 +8,15 @@ import android.database.sqlite.SQLiteStatement
 import androidx.annotation.NonNull
 import com.johnmelodyme.foodie.Constant.ConstantValue
 
-class DatabaseHelper(context: Context) :
+class DatabaseHelper(
+    context: Context, name: String?,
+    factory: SQLiteDatabase.CursorFactory?, version: Int
+) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)
 {
 
     var writeableDatabase: SQLiteDatabase = writableDatabase
-   internal val readableDatabase: SQLiteDatabase = getReadableDatabase()
+    internal val readableDatabase: SQLiteDatabase = getReadableDatabase()
 
     override fun onCreate(db: SQLiteDatabase?)
     {
@@ -25,7 +28,7 @@ class DatabaseHelper(context: Context) :
         TODO("Not yet implemented")
     }
 
-    fun query(sql: String)
+    fun query(@NonNull sql: String)
     {
         writeableDatabase.execSQL(sql)
     }
