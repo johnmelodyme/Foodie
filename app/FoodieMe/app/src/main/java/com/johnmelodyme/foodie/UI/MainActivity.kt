@@ -18,22 +18,23 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.johnmelodyme.foodie.Constant.ConstantValue
-import com.johnmelodyme.foodie.Constant.ConstantValue.Companion.basedUrlRecipe
 import com.johnmelodyme.foodie.R
 import com.johnmelodyme.foodie.UI.Authentication.RegistrationActivity
+import com.johnmelodyme.foodie.UI.CustomAdapter.MainAdapter
 import com.johnmelodyme.foodie.UI.QR.QRActivity
-import java.net.URL
 
 class MainActivity : AppCompatActivity()
 {
@@ -169,5 +170,13 @@ class MainActivity : AppCompatActivity()
                 )
             }
         }
+    }
+
+    private fun showPost(bundle: Bundle?)
+    {
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerviewmain)
+        val data: Array<out Parcelable>? = intent.getParcelableArrayExtra("value")
+        val adapter = MainAdapter(data)
+        recyclerView.adapter = adapter
     }
 }

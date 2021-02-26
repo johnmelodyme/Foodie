@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteStatement
 import androidx.annotation.NonNull
 import com.johnmelodyme.foodie.Constant.ConstantValue
+import retrofit2.http.DELETE
 
 class DatabaseHelper(
     context: Context, name: String?,
@@ -20,12 +21,12 @@ class DatabaseHelper(
 
     override fun onCreate(db: SQLiteDatabase?)
     {
-        TODO("Not yet implemented")
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int)
     {
-        TODO("Not yet implemented")
+
     }
 
     fun query(@NonNull sql: String)
@@ -33,7 +34,8 @@ class DatabaseHelper(
         writeableDatabase.execSQL(sql)
     }
 
-    fun insertData(@NonNull post: String, image: ByteArray)
+    // * WARN DEPRECATED
+    private fun insertData(@NonNull post: String, image: ByteArray)
     {
         val query: String = "INSERT INTO FOODIE VALUES (NULL, ?, ?, ?)"
         val statement: SQLiteStatement = writeableDatabase.compileStatement(query)

@@ -1,23 +1,33 @@
 package com.johnmelodyme.foodie.UI
 
 import android.Manifest
+import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.view.View
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.NonNull
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.johnmelodyme.foodie.Database.DatabaseHelper
 import com.johnmelodyme.foodie.Database.SqlQuery
+import com.johnmelodyme.foodie.Model.Posts
 import com.johnmelodyme.foodie.R
+import java.io.ByteArrayOutputStream
 import java.io.FileNotFoundException
 import java.io.InputStream
+import java.lang.Exception
 
 class PostActivity : AppCompatActivity()
 {
@@ -77,9 +87,17 @@ class PostActivity : AppCompatActivity()
 
     private fun postStatus()
     {
-        val databaseHelper: DatabaseHelper = DatabaseHelper(this, "Foodie.sqlite", null, 1)
+        try
+        {
+            val databaseHelper: DatabaseHelper = DatabaseHelper(this, "Foodie.sqlite", null, 1)
+            val sqliteDatabase: SQLiteDatabase = databaseHelper.writeableDatabase
+            sqliteDatabase.execSQL("CREATE TABLE Foodie(id INTEGER PRIMARY KEY, Post TEXT, Image BLOB)")
 
-        databaseHelper.query(SqlQuery.userQuery)
+        }
+        catch (ex: Exception)
+        {
+            ex.stackTrace
+        }
 
         onRequestForPermission()
     }
@@ -108,7 +126,7 @@ class PostActivity : AppCompatActivity()
             {
                 val intent = Intent(Intent.ACTION_PICK)
                 intent.type = "images/*"
-                startActivityForResult(intent, REQUEST_ID)
+                startActivityForResult(intent, 999)
             }
             else
             {
@@ -121,11 +139,43 @@ class PostActivity : AppCompatActivity()
         }
     }
 
+    private fun passData(context: Context, @NonNull post: Posts): Intent
+    {
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("value", post)
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        startActivity(intent)
+        this.finish()
+
+        return intent
+    }
+
+    private fun parseValue(context: Context, @NonNull post: ArrayList<Posts>): Intent
+    {
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("value", post)
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        context.startActivity(intent)
+        this.finish()
+
+
+        return intent
+    }
+
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?)
     {
         super.onActivityResult(requestCode, resultCode, data)
 
+        val textView: TextView = findViewById<TextView>(R.id.result)
+        val newPost: EditText = findViewById<EditText>(R.id.new_post)
         val postedImage: ImageView = findViewById<ImageView>(R.id.post_image)
+        val databaseHelper: DatabaseHelper = DatabaseHelper(this, "Foodie.sqlite", null, 1)
+        val sqliteDatabase: SQLiteDatabase = databaseHelper.writeableDatabase
+        val alphabet: List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+        val randomWord: String = List((1..10).random()) { alphabet.random() }.joinToString("")
 
         if (requestCode == REQUEST_ID && resultCode == RESULT_OK && data != null)
         {
@@ -135,10 +185,30 @@ class PostActivity : AppCompatActivity()
             {
                 // TODO Revision Needed
                 // setContentView(R.layout.recipe_qr)
-                val inputStream: InputStream? = uri?.let { contentResolver.openInputStream(it) }
-                val bitmap: Bitmap = BitmapFactory.decodeStream(inputStream)
-                postedImage.setImageBitmap(bitmap)
+                // val inputStream: InputStream? = uri?.let { contentResolver.openInputStream(it) }
+                // val bitmap: Bitmap = BitmapFactory.decodeStream(inputStream)
+                // postedImage.setImageBitmap(bitmap)
+                val postsUser: ArrayList<Posts> = ArrayList<Posts>()
+                val userPost: String = newPost.text.toString()
+                val stringFilePath: String =
+                    Environment.getDownloadCacheDirectory().path + "/Download/" + randomWord + ".jpeg"
+                val bitmap: Bitmap = BitmapFactory.decodeFile(stringFilePath)
+                val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
 
+                bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteArrayOutputStream)
+
+                val byteImage: ByteArray = byteArrayOutputStream.toByteArray()
+                val contentValues: ContentValues = ContentValues()
+                contentValues.put("Name", userPost)
+                contentValues.put("Image", byteImage)
+
+                sqliteDatabase.insert("Foodie", null, contentValues)
+                textView.text = "Successful"
+
+                postsUser.add(Posts(userPost, ""))
+
+
+                parseValue(this, postsUser)
             }
             catch (file: FileNotFoundException)
             {

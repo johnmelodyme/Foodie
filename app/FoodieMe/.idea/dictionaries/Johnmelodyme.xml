@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Johnmelodyme">
     <words>
+      <w>bottomnavigationhome</w>
       <w>bottomnavigationprofilee</w>
       <w>bottomnavigationqr</w>
       <w>bottomnavigationsearch</w>
@@ -11,8 +12,10 @@
       <w>moshi</w>
       <w>newpost</w>
       <w>profiletoolbar</w>
+      <w>recyclerviewmain</w>
       <w>signout</w>
       <w>sqlite</w>
+      <w>tlmain</w>
       <w>zxing</w>
     </words>
   </dictionary>
