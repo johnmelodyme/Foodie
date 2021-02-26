@@ -24,5 +24,8 @@ class ConstantValue
         const val basedUrlRecipe: String =
             "https://gist.githubusercontent.com/johnmelodyme/e332959e7550b20b2bced148e7fdad83/raw/376f88282c6eaf90594236f2dea82b16f68d3404/recipe.json"
 
+        const val DATABASE_NAME: String = "Foodie.db"
+
+        const val DATABASE_VERSION: Int = 1
     }
 }

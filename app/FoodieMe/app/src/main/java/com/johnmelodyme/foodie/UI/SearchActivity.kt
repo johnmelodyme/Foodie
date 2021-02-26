@@ -17,12 +17,17 @@ package com.johnmelodyme.foodie.UI
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ListView
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.johnmelodyme.foodie.R
+import com.johnmelodyme.foodie.UI.CustomAdapter.SearchActivityAdapter
 import com.johnmelodyme.foodie.UI.QR.QRActivity
 
 class SearchActivity : AppCompatActivity()
 {
+    private lateinit var listView: ListView
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -30,6 +35,9 @@ class SearchActivity : AppCompatActivity()
 
         // * Initialise User Interface
         initUserInterface()
+
+        // * Show List
+        showList(savedInstanceState)
     }
 
     // * User Interface Renderer
@@ -91,6 +99,28 @@ class SearchActivity : AppCompatActivity()
 
     private fun showList(bundle: Bundle?)
     {
-        val categories = arrayOf<String>("Desserts", "Western", "Local", "")
+        listView = findViewById(R.id.listviewsearch)
+
+        val categories = arrayOf<String>("Desserts", "Western", "Local")
+        val imageId = arrayOf<Int>(
+            R.drawable.abc,
+            R.drawable.sandwich,
+            R.drawable.ic_local
+        )
+
+        val listAdapter = SearchActivityAdapter(this, categories, emptyArray(), imageId)
+        listView.adapter = listAdapter
+
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val itemAtPos = parent.getItemAtPosition(position)
+            val itemIdAtPos = parent.getItemIdAtPosition(position)
+
+            Toast.makeText(
+                this,
+                "Click on item at $itemAtPos its item id $itemIdAtPos",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+
     }
 }

@@ -21,6 +21,7 @@
             android:id="@+id/image_recipe"
             android:layout_width="match_parent"
             android:layout_height="236dp"
+            android:background="@drawable/k"
             tools:ignore="ContentDescription" />
     </androidx.cardview.widget.CardView>
 

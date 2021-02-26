@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".UI.SearchActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -20,7 +21,7 @@
 
 
     <ListView
-        android:id="@+id/listviewqr"
+        android:id="@+id/listviewsearch"
         android:layout_width="347dp"
         android:layout_height="555dp"
         android:layout_above="@+id/bottomnavigationsearch"

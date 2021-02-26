@@ -24,13 +24,14 @@ class SearchActivityAdapter(
         val inflater: LayoutInflater = context.layoutInflater
         val rowView: View = inflater.inflate(R.layout.recipe_qr, null, true)
 
-        val imageView: ImageView = rowView.findViewById<ImageView>(R.id.image_recipe)
-        val titleText: TextView = rowView.findViewById<TextView>(R.id.name_of_recipe)
-        val descriptionText: TextView = rowView.findViewById<TextView>(R.id.description_recipe)
+        val imageView: ImageView = rowView.findViewById(R.id.image_recipe)
+        val titleText: TextView = rowView.findViewById(R.id.name_of_recipe)
+        val descriptionText: TextView = rowView.findViewById(R.id.description_recipe)
 
-        titleText.text = title[position]
-        imageView.setImageResource(imgID[position])
-        descriptionText.text = description[position]
+        // TODO FIX THIS
+//        titleText.text = title[position]
+//        imageView.setImageResource(imgID[position])
+//        descriptionText.text = description[position]
 
 
         return rowView
