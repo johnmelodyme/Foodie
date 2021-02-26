@@ -41,5 +41,9 @@ class Methods {
                 ConstantValue.isUserFirstTime = false
             }
         }
+
+        fun log() {
+            println("I am so poor that I dont have $$ to get a droplet or pay for firebase for the project")
+        }
     }
 }

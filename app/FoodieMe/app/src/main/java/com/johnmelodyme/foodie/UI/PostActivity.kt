@@ -118,8 +118,16 @@ class PostActivity : AppCompatActivity()
         grantResults: IntArray
     )
     {
+//        val uri: Uri? = data.data
+        val textView: TextView = findViewById<TextView>(R.id.result)
+        val newPost: EditText = findViewById<EditText>(R.id.new_post)
+        val postedImage: ImageView = findViewById<ImageView>(R.id.post_image)
+        val databaseHelper: DatabaseHelper = DatabaseHelper(this, "Foodie.sqlite", null, 1)
+        val sqliteDatabase: SQLiteDatabase = databaseHelper.writeableDatabase
+        val alphabet: List<Char> = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+        val randomWord: String = List((1..10).random()) { alphabet.random() }.joinToString("")
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-
+        
         if (requestCode == REQUEST_ID)
         {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)
@@ -127,6 +135,42 @@ class PostActivity : AppCompatActivity()
                 val intent = Intent(Intent.ACTION_PICK)
                 intent.type = "images/*"
                 startActivityForResult(intent, 999)
+
+
+                try
+                {
+                    // TODO Revision Needed
+                    // setContentView(R.layout.recipe_qr)
+                    // val inputStream: InputStream? = uri?.let { contentResolver.openInputStream(it) }
+                    // val bitmap: Bitmap = BitmapFactory.decodeStream(inputStream)
+                    // postedImage.setImageBitmap(bitmap)
+                    val postsUser: ArrayList<Posts> = ArrayList<Posts>()
+                    val userPost: String = newPost.text.toString()
+                    val stringFilePath: String =
+                        Environment.getDownloadCacheDirectory().path + "/Download/" + randomWord + ".jpeg"
+                    val bitmap: Bitmap = BitmapFactory.decodeFile(stringFilePath)
+                    val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
+
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteArrayOutputStream)
+
+                    val byteImage: ByteArray = byteArrayOutputStream.toByteArray()
+                    val contentValues: ContentValues = ContentValues()
+                    contentValues.put("Name", userPost)
+                    contentValues.put("Image", byteImage)
+
+                    sqliteDatabase.insert("Foodie", null, contentValues)
+                    textView.text = "Successful"
+
+                    postsUser.add(Posts(userPost, ""))
+
+
+                    parseValue(this, postsUser)
+                }
+                catch (file: FileNotFoundException)
+                {
+                    file.stackTrace
+                }
+
             }
             else
             {

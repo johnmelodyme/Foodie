@@ -35,12 +35,12 @@ class MainAdapter(private val post: Array<out Parcelable>?) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int)
     {
-        holder.bindItems(post[position])
+        holder.bindItems(post?.get(position) as Posts)
     }
 
     override fun getItemCount(): Int
     {
-        return post.size
+        return post?.size!!
     }
 
 }

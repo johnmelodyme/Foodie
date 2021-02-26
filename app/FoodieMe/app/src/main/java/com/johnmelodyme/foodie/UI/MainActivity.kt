@@ -20,6 +20,8 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
+import android.widget.ListView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.app.ActivityCompat
@@ -31,14 +33,25 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.johnmelodyme.foodie.Constant.ConstantValue
+import com.johnmelodyme.foodie.Functions.Methods
 import com.johnmelodyme.foodie.R
 import com.johnmelodyme.foodie.UI.Authentication.RegistrationActivity
+import com.johnmelodyme.foodie.UI.CustomAdapter.AnotherAdapter
 import com.johnmelodyme.foodie.UI.CustomAdapter.MainAdapter
+import com.johnmelodyme.foodie.UI.CustomAdapter.QrRecipeAdapter
+import com.johnmelodyme.foodie.UI.CustomAdapter.SearchActivityAdapter
 import com.johnmelodyme.foodie.UI.QR.QRActivity
+import kotlin.reflect.jvm.internal.impl.utils.FunctionsKt
 
 class MainActivity : AppCompatActivity()
 {
     private val TAG = ConstantValue.AppName
+
+    override fun onStart()
+    {
+        super.onStart()
+        Methods.log()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -80,6 +93,7 @@ class MainActivity : AppCompatActivity()
         }
 
 
+        showPost(savedInstanceState)
     }
 
     // * User Interface Renderer
@@ -174,9 +188,33 @@ class MainActivity : AppCompatActivity()
 
     private fun showPost(bundle: Bundle?)
     {
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerviewmain)
-        val data: Array<out Parcelable>? = intent.getParcelableArrayExtra("value")
-        val adapter = MainAdapter(data)
-        recyclerView.adapter = adapter
+        val listView: ListView = findViewById(R.id.recyclerviewmain)
+//        val recyclerView: RecyclerView = findViewById(R.id.recyclerviewmain)
+//        val data: Array<out Parcelable>? = intent.getParcelableArrayExtra("value")
+////        val adapter = MainAdapter(data)
+//        val adapter = SearchActivityAdapter(data)
+//        recyclerView.adapter = adapter
+
+        val categories =
+            arrayOf<String>("Desserts", "Western", "Local", "", "", "", "", "", "", "", "")
+        val imageId = arrayOf<Int>(
+            R.drawable.abc,
+            R.drawable.sandwich,
+            R.drawable.ic_local
+        )
+
+        val listAdapter = AnotherAdapter(this, categories, emptyArray(), imageId)
+        listView.adapter = listAdapter
+
+        listView.setOnItemClickListener { parent, view, position, id ->
+            val itemAtPos = parent.getItemAtPosition(position)
+            val itemIdAtPos = parent.getItemIdAtPosition(position)
+
+            Toast.makeText(
+                this,
+                "Click on item at $itemAtPos its item id $itemIdAtPos",
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 }
