@@ -191,7 +191,7 @@ class MainActivity : AppCompatActivity()
         val listView: ListView = findViewById(R.id.recyclerviewmain)
 //        val recyclerView: RecyclerView = findViewById(R.id.recyclerviewmain)
 //        val data: Array<out Parcelable>? = intent.getParcelableArrayExtra("value")
-////        val adapter = MainAdapter(data)
+//        val adapter = MainAdapter(data)
 //        val adapter = SearchActivityAdapter(data)
 //        recyclerView.adapter = adapter
 
